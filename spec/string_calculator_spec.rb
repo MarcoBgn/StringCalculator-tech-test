@@ -30,5 +30,9 @@ describe StringCalculator do
     it "Can parse newlines as separators in the string" do
       expect(@string_calculator.add("1\n2,3")).to eq 6
     end
+    
+    it "Supports different delimiters" do
+      expect(@string_calculator.add("//;\n1;2")).to eq 3
+    end
   end
 end
