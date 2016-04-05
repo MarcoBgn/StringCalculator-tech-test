@@ -7,10 +7,9 @@ class StringCalculator
   end
   
   private
-  
   def guard_string(string)
-    negative = string.match(/-\d/)
-    raise "negatives not allowed: #{negative}" if negative
+    negative = string.scan(/-\d/).join(",")
+    raise "negatives not allowed: #{negative}" if !negative.empty?
     return 0 if string.empty?
   end
 end

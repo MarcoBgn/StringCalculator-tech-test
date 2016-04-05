@@ -38,5 +38,9 @@ describe StringCalculator do
     it "Throws an error when passed a negative number" do
       expect{ @string_calculator.add("1,2,-1")}.to raise_error "negatives not allowed: -1"
     end
+    
+    it "Throws an error listing all negative numbers when passed more than one" do
+      expect{ @string_calculator.add("1,2,-1\n,2,-5")}.to raise_error "negatives not allowed: -1,-5"
+    end
   end
 end
