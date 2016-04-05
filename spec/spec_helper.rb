@@ -1,4 +1,5 @@
 require_relative "../string_calculator"
+require_relative "random_generator_helper"
 
 RSpec.configure do |config|
   

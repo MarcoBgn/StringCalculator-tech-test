@@ -17,5 +17,14 @@ describe StringCalculator do
     it "Returns the sum of two numbers passed in a string" do
       expect(@string_calculator.add("1,2")).to eq 3
     end
+    
+    it "Returns the sum of an unknown number of numbers" do
+      expect(@string_calculator.add("1,3,4,2,5,6")).to eq 21 
+    end
+    
+    it "Can be passed a random number of numbers" do
+      string = random_number_of_string_numbers
+      expect((1..100)).to include @string_calculator.add(string)
+    end
   end
 end
