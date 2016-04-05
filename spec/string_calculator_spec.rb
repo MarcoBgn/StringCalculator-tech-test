@@ -26,5 +26,9 @@ describe StringCalculator do
       string = random_number_of_string_numbers
       expect((1..100)).to include @string_calculator.add(string)
     end
+    
+    it "Can parse newlines as separators in the string" do
+      expect(@string_calculator.add("1\n2,3")).to eq 6
+    end
   end
 end
