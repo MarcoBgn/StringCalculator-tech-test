@@ -34,5 +34,9 @@ describe StringCalculator do
     it "Supports different delimiters" do
       expect(@string_calculator.add("//;\n1;2")).to eq 3
     end
+    
+    it "Throws an error when passed a negative number" do
+      expect{ @string_calculator.add("1,2,-1")}.to raise_error "negatives not allowed"
+    end
   end
 end
